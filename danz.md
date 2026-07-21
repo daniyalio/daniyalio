@@ -1,98 +1,106 @@
-# Dream-to-Science Generator
+# Astra — Dream-to-Science Generator
 
-> Transform vague human ideas into scientifically testable hypotheses, simulations, and experiments using AI.
+> Transform human imagination into structured scientific exploration.
 
 ---
 
 # Vision
 
-Scientists often start with intuition:
+Scientists often begin with intuition:
 
-> "What if gravity became weaker near oceans?"
+> "What if gravity behaved differently?"
 
-> "Could plants communicate through unknown electrical patterns?"
+> "Could plants communicate through unknown mechanisms?"
 
-> "What if memory is stored differently than we think?"
+> "What if memory works in a completely different way?"
 
 Most AI systems answer questions.
 
-This project aims to generate **new scientific ideas**.
+This project aims to create an AI system that explores possibilities.
 
-The Dream-to-Science Generator accepts speculative concepts and produces a structured research proposal including assumptions, mathematical models, simulations, predictions, and experiments.
+The Dream-to-Science Generator converts vague human ideas into structured scientific investigations:
 
-The goal is **not to claim discoveries**, but to accelerate scientific exploration by converting vague thoughts into rigorous, testable hypotheses.
+Human imagination → Scientific hypothesis → Mathematical model → Simulation → Experiment
 
----
-
-# Objectives
-
-* Convert natural language ideas into structured scientific hypotheses.
-* Identify scientific domains involved.
-* Build mathematical representations when possible.
-* Generate simulations.
-* Predict observable consequences.
-* Suggest experiments.
-* Estimate uncertainty.
-* Track alternative explanations.
-* Improve hypotheses through iterative refinement.
+The goal is not to replace scientists, but to expand the space of ideas humans can investigate.
 
 ---
 
-# Example
+# Why This Project Is Different
 
-## Input
+Current AI systems are mainly reactive:
+
+* Answer questions
+* Summarize knowledge
+* Generate text
+* Assist with existing workflows
+
+This system is designed to be exploratory.
+
+Instead of asking:
+
+> "What is known?"
+
+It asks:
+
+> "What could be possible, and how could we test it?"
+
+The system attempts to bridge:
 
 ```
-What if gravity slowly changed depending on Earth's temperature?
-```
+Human Imagination
 
-## Output
+        ↓
 
-```
-Domain:
-Physics
-Climate Science
+Scientific Hypothesis
 
-Known Facts:
-Gravity is determined primarily by mass and distance.
+        ↓
 
-Hypothesis:
-Assume a hypothetical coupling between local temperature
-and gravitational constant G.
+Mathematical Model
 
-Possible Mathematical Extension:
-
-G = G0 × (1 + αT)
+        ↓
 
 Simulation
 
-Run planetary orbit simulations
-under different α values.
+        ↓
 
-Predictions
+Experiment
+```
 
-Satellite drift
-Clock deviations
-Orbital instability
-Changes in tides
+---
 
-Possible Experiments
+# Core Idea
 
-Compare satellite trajectories.
+The system accepts speculative ideas and transforms them into structured research proposals.
 
-Analyze GPS timing.
+Input:
 
-Compare astronomical observations.
+```
+What if humans could communicate through brain-to-brain signals?
+```
 
-Confidence
+Output:
 
-Extremely Low
+```
+Scientific Domain:
+Neuroscience
 
-Reason
+Related Knowledge:
+Brain-computer interfaces
+Neural synchronization
+Information transfer
 
-Contradicts current physics.
-No supporting evidence.
-Useful only as speculative research.
+Possible Hypothesis:
+A communication channel may exist through neural signal coupling.
+
+Required Investigation:
+- Identify possible mechanisms
+- Build mathematical models
+- Design experiments
+- Evaluate evidence
+
+Confidence:
+Speculative
 ```
 
 ---
@@ -100,39 +108,76 @@ Useful only as speculative research.
 # System Architecture
 
 ```
-                User Idea
-                     │
-                     ▼
-         Natural Language Parser
-                     │
-                     ▼
-      Scientific Domain Detector
-                     │
-         ┌───────────┴────────────┐
-         ▼                        ▼
- Knowledge Retrieval       Existing Research
-         │                        │
-         └───────────┬────────────┘
-                     ▼
-        Scientific Reasoning Engine
-                     │
-      ┌──────────────┼──────────────┐
-      ▼              ▼              ▼
-Hypothesis      Math Builder   Simulation Builder
-Generator
-      │
-      ▼
-Prediction Generator
-      │
-      ▼
-Experiment Generator
-      │
-      ▼
-Confidence Analyzer
-      │
-      ▼
-Final Scientific Report
+                    User Idea
+
+                       ↓
+
+          Natural Language Understanding
+
+                       ↓
+
+          Scientific Domain Detection
+
+                       ↓
+
+        Knowledge Retrieval System
+
+                       ↓
+
+          Hypothesis Generation Agent
+
+                       ↓
+
+       Mathematical Modeling Agent
+
+                       ↓
+
+          Simulation Generation Agent
+
+                       ↓
+
+          Experiment Design Agent
+
+                       ↓
+
+             Critic Agent
+
+                       ↓
+
+          Final Research Report
 ```
+
+---
+
+# AI Agent Architecture
+
+The system uses multiple specialized agents.
+
+```
+                    Controller Agent
+
+                           |
+
+ ------------------------------------------------
+
+ |              |              |                 |
+
+Physics      Biology       Chemistry       Mathematics
+
+Agent        Agent          Agent            Agent
+
+
+                           |
+
+                    Critic Agent
+
+
+                           |
+
+                Experiment Designer Agent
+```
+
+Each agent specializes in a scientific domain and contributes knowledge and reasoning.
 
 ---
 
@@ -140,465 +185,516 @@ Final Scientific Report
 
 ## 1. Idea Parser
 
-Purpose
+Purpose:
 
-Extract concepts from natural language.
+Convert natural language ideas into structured concepts.
 
-Input
+Extract:
 
-```
-What if...
-```
+* Objects
+* Variables
+* Relationships
+* Assumptions
+* Unknown factors
 
-Output
+Technologies:
 
-```
-Objects
-
-Processes
-
-Variables
-
-Relationships
-
-Unknown assumptions
-```
-
-Models
-
-* Transformer-based language model
+* Transformers
+* NLP pipelines
 * Dependency parsing
-* Named entity recognition
 
 ---
 
-## 2. Scientific Domain Detector
+# 2. Scientific Domain Detector
 
-Classify the idea into one or more domains.
+Classifies ideas into scientific fields.
 
-Examples
+Examples:
 
-Physics
+* Physics
+* Biology
+* Chemistry
+* Astronomy
+* Neuroscience
+* Climate Science
+* Economics
 
-Biology
+Methods:
 
-Chemistry
-
-Astronomy
-
-Economics
-
-Psychology
-
-Neuroscience
-
-Climate Science
-
-Methods
-
-* Multi-label classification
 * Embedding similarity
-* Retrieval-based matching
+* Multi-label classification
+* Knowledge retrieval
 
 ---
 
-## 3. Knowledge Retrieval
+# 3. Scientific Knowledge Retrieval
 
-Collect existing scientific knowledge.
+Purpose:
 
-Sources
+Collect existing scientific information.
+
+Sources:
 
 * arXiv
 * PubMed
-* Crossref
 * Semantic Scholar
-* NASA
-* CERN
+* Crossref
 * OpenAlex
 
-Tasks
+Find:
 
-Find
-
-Existing theories
-
-Relevant equations
-
-Known experiments
-
-Contradictions
-
-Open questions
+* Existing theories
+* Relevant papers
+* Known experiments
+* Contradictions
+* Research gaps
 
 ---
 
-## 4. Hypothesis Generator
+# 4. Hypothesis Generator
 
-Generate structured hypotheses.
+Creates structured scientific hypotheses.
 
-Template
+Template:
 
 ```
-Assume
+Assumption:
 
 X affects Y
 
-because
+
+Possible mechanism:
 
 ...
 
-Expected consequence
+
+Expected consequence:
 
 ...
 
-Potential mechanism
+
+Required investigation:
 
 ...
 ```
 
 ---
 
-## 5. Mathematical Model Generator
+# 5. Mathematical Model Generator
 
-Attempt to formalize the hypothesis.
+Attempts to translate concepts into mathematical representations.
 
-Example
+Capabilities:
 
-Input
+* Equation generation
+* Symbolic reasoning
+* Dimensional checking
+* Mathematical consistency analysis
+
+Example:
 
 ```
-Light slows near emotions.
-```
+Idea:
 
-Output
+Temperature affects gravity.
 
-```
-Not enough physical basis.
 
-Suggest hypothetical variable E.
+Possible model:
 
-c = c0 − βE
+G = G0 × (1 + αT)
+
 
 Warning:
-Purely speculative.
-```
 
-Capabilities
-
-Symbolic reasoning
-
-Dimensional consistency checks
-
-Equation generation
-
----
-
-## 6. Simulation Generator
-
-Automatically build simulations.
-
-Possible frameworks
-
-Python
-
-NumPy
-
-SciPy
-
-PyTorch
-
-JAX
-
-MATLAB (optional)
-
-Simulation types
-
-Differential equations
-
-Monte Carlo
-
-Agent-based models
-
-Cellular automata
-
-Particle systems
-
-Network simulations
-
----
-
-## 7. Prediction Engine
-
-Predict measurable outcomes.
-
-Examples
-
-Temperature change
-
-Population growth
-
-Reaction rates
-
-Orbital shifts
-
-Economic indicators
-
-Neural activity
-
----
-
-## 8. Experiment Designer
-
-Generate experiments.
-
-Include
-
-Objective
-
-Variables
-
-Controls
-
-Measurements
-
-Expected observations
-
-Required equipment
-
-Potential risks
-
----
-
-## 9. Confidence Analyzer
-
-Estimate scientific plausibility.
-
-Factors
-
-Agreement with established evidence
-
-Logical consistency
-
-Availability of supporting data
-
-Model assumptions
-
-Experimental feasibility
-
-Output
-
-```
-Scientific Plausibility
-
-Very High
-
-High
-
-Medium
-
-Low
-
-Speculative
-
-Pure Fiction
+No experimental evidence.
+Highly speculative.
 ```
 
 ---
 
-## 10. Scientific Report Generator
+# 6. Simulation Generator
 
-Produce a structured report.
+Creates computational experiments.
 
-Sections
+Possible frameworks:
+
+* NumPy
+* SciPy
+* PyTorch
+* JAX
+* SymPy
+
+Simulation types:
+
+* Differential equations
+* Agent-based models
+* Monte Carlo simulations
+* Network simulations
+* Physical simulations
+
+---
+
+# 7. Prediction Engine
+
+Generates possible observable outcomes.
+
+Examples:
+
+* Environmental changes
+* Biological effects
+* Physical measurements
+* Economic changes
+* Neural activity patterns
+
+---
+
+# 8. Experiment Designer
+
+Creates possible validation methods.
+
+Includes:
+
+* Research objective
+* Variables
+* Controls
+* Measurements
+* Expected results
+* Limitations
+
+---
+
+# 9. Scientific Critic Agent
+
+A scientific idea should not only be created.
+
+It should be challenged.
+
+The Critic Agent asks:
+
+* What assumptions are unsupported?
+* What evidence contradicts this?
+* Are there alternative explanations?
+* Is this physically possible?
+* Is the idea testable?
+
+Architecture:
+
+```
+Hypothesis Generator
+
+        ↓
+
+Critic Agent
+
+        ↓
+
+Improvement Agent
+
+        ↓
+
+Final Hypothesis
+```
+
+---
+
+# 10. Scientific Novelty Analyzer
+
+Purpose:
+
+Determine whether an idea is already known or potentially unexplored.
+
+Process:
+
+```
+New Idea
+
+↓
+
+Scientific Literature Search
+
+↓
+
+Paper Embeddings
+
+↓
+
+Knowledge Graph Comparison
+
+↓
+
+Similarity Analysis
+
+↓
+
+Novelty Report
+```
+
+Output:
+
+```
+Classification:
+
+Existing Research
+
+or
+
+Variation of Existing Research
+
+or
+
+Potentially Novel Combination
+```
+
+---
+
+# Scientific Report Generator
+
+Final output format:
+
+```
+Title
 
 Abstract
 
 Background
 
+Scientific Domain
+
+Existing Research
+
 Hypothesis
 
 Assumptions
 
-Mathematics
+Mathematical Model
 
 Simulation
 
 Predictions
 
-Experiments
+Experiment Proposal
 
 Limitations
 
-Future Work
-
 References
+
+Confidence Score
+```
 
 ---
 
 # Machine Learning Components
 
-Natural Language Understanding
+## Natural Language Understanding
 
 * Transformer models
+* Large Language Models
+* NLP pipelines
 
-Retrieval
+## Retrieval
 
-* Dense embeddings
+* Embeddings
 * Vector databases
+* Semantic search
 
-Reasoning
+## Reasoning
 
-* Retrieval-Augmented Generation (RAG)
-* Rule-based scientific validation
+* Retrieval-Augmented Generation
+* Knowledge graphs
+* Symbolic reasoning
 
-Classification
+## Classification
 
 * Multi-label classifiers
+* Domain detection
 
-Ranking
+## Ranking
 
-* Relevance scoring
-* Confidence estimation
+* Similarity scoring
+* Novelty estimation
 
-Knowledge Representation
+## Simulation
 
-* Knowledge graphs
-* Ontologies
-
-Simulation
-
-* Physics engines
-* Numerical solvers
+* Scientific computing models
 
 ---
 
 # Suggested Tech Stack
 
-Backend
+## Backend
 
 * Python
 * FastAPI
 
-Machine Learning
+## Machine Learning
 
 * PyTorch
 * Hugging Face Transformers
 * Sentence Transformers
 
-Databases
+## Databases
 
 * PostgreSQL
 * Neo4j
-* Vector database (FAISS, Chroma, or Milvus)
+* FAISS / Chroma / Milvus
 
-Scientific Computing
+## Scientific Computing
 
 * NumPy
 * SciPy
 * SymPy
 * NetworkX
 
-Visualization
-
-* Plotly
-* D3.js
-* Matplotlib
-
-Frontend
+## Frontend
 
 * React
 * Next.js
 
-Deployment
+## Deployment
 
 * Docker
-* Kubernetes (optional)
+* Kubernetes
 
 ---
 
-# Project Phases
+# Development Roadmap
 
-## Phase 1
+## Version 1
 
-* Natural language parsing
-* Domain detection
-* Knowledge retrieval
+Input:
 
-## Phase 2
+A scientific idea.
 
-* Hypothesis generation
-* Scientific report generation
+Output:
 
-## Phase 3
+* Related research
+* Scientific domain
+* Existing knowledge
+* Possible hypotheses
+* Experiment suggestions
+* Confidence score
+* Research report
 
-* Mathematical model generation
-* Symbolic reasoning
+---
 
-## Phase 4
+## Version 2
 
+Add:
+
+* Scientific agents
+* Self-criticism
+* Knowledge graphs
+* Better reasoning
+
+---
+
+## Version 3
+
+Add:
+
+* Mathematical modeling
 * Automatic simulations
+* Prediction generation
 
-## Phase 5
+---
 
-* Prediction engine
+## Version 4
 
-## Phase 6
+Add:
 
-* Experiment generation
+* Autonomous research workflows
+* Continuous learning
+* Expert feedback loops
 
-## Phase 7
+---
 
-* Interactive web application
+# Evaluation Metrics
+
+The system will be evaluated on:
+
+## Scientific Accuracy
+
+Does it correctly use existing scientific knowledge?
+
+## Novelty
+
+Does it produce meaningful new combinations?
+
+## Testability
+
+Can generated ideas produce measurable predictions?
+
+## Mathematical Consistency
+
+Are generated models logically valid?
+
+## Expert Evaluation
+
+Can scientists evaluate the usefulness of generated ideas?
 
 ---
 
 # Challenges
 
-* Distinguishing speculation from established science.
-* Preventing fabricated citations or unsupported claims.
-* Generating mathematically consistent models.
-* Evaluating scientific novelty.
-* Keeping confidence estimates calibrated.
-* Scaling retrieval across large scientific corpora.
+The system may:
+
+* Generate impossible hypotheses.
+* Misinterpret scientific papers.
+* Produce unrealistic experiments.
+* Confuse correlation with causation.
+* Overestimate novelty.
+
+Every generated idea requires human scientific validation.
 
 ---
 
 # Ethical Principles
 
-The system must never present speculative ideas as established scientific facts.
+The system must clearly separate:
 
-Every output should clearly distinguish:
-
-* Established knowledge
+* Established scientific knowledge
 * Supported hypotheses
-* Speculative reasoning
-* Fictional or highly uncertain concepts
+* Speculative ideas
+* Fictional concepts
 
-Scientific references should be traceable whenever possible, and uncertainty should be communicated explicitly.
+It must never present speculation as scientific fact.
 
 ---
 
 # Long-Term Vision
 
-Build an AI research assistant that helps scientists and curious learners explore unconventional ideas responsibly by:
+Create an AI research partner that helps humanity explore ideas beyond normal imagination.
 
-* Organizing knowledge across disciplines.
-* Highlighting gaps in current understanding.
-* Suggesting experiments worth investigating.
-* Accelerating hypothesis generation without replacing scientific validation.
+A system that can:
 
-Success is not measured by producing sensational claims, but by generating ideas that are logically coherent, transparent about uncertainty, and useful as starting points for real scientific inquiry.
+* Connect knowledge across disciplines.
+* Discover hidden relationships.
+* Suggest experiments.
+* Explore unknown possibilities.
+* Accelerate scientific creativity.
+
+The purpose is not to replace scientists.
+
+The purpose is to help humans ask better questions.
 
 ---
 
 # License
 
-MIT License (recommended)
+MIT License
 
 ---
 
 # Status
 
-**Research Concept**
+Research Concept
 
-This project is an ambitious exploration at the intersection of natural language processing, retrieval systems, symbolic reasoning, scientific computing, and simulation. It should be treated as a research platform rather than a source of verified scientific conclusions.
+This project explores the intersection of:
+
+* Artificial Intelligence
+* Scientific Discovery
+* Knowledge Representation
+* Simulation
+* Human Creativity
+
+The Dream-to-Science Generator is a research platform designed to explore how AI can assist scientific thinking responsibly.
